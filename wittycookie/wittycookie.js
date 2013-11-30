@@ -6,6 +6,7 @@ if (Meteor.isClient) {
     return "Welcome to wittycookie.";
   };
 
+
   Template.hello.events({
     'click #b1' : function () {
       // template data, if any, is available in 'this'
@@ -15,6 +16,9 @@ if (Meteor.isClient) {
     'click #b2' : function () {
       alert("foo");
 
+    },
+    'click #js-keks' : function () {
+      $( "#js-keks" ).effect( "shake" );
     }
   });
 }
