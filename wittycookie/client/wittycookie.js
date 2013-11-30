@@ -15,27 +15,52 @@ var wittyMessages=new Array("Rotation. Ich beruehre die Tastatur. Sonnenaufgang.
    return wittyMessages[i];
 };
 
-if (Meteor.isClient) {
-    
-  Template.hello.greeting = function () {
-    return "Keks";
-  };
+Quotes = new Meteor.Collection("quotes");
 
-  Template.hello.events({
-     
-    'click #cookie' : function () {
-      $( "#cookie" ).effect( "shake" );
+  
+Template.hello.greeting = function () {
+  return "Keks";
+};
 
-      var timer = setInterval(function(){
-          $('#open-cookie').removeClass('hide');
-          $('#closed-cookie').addClass('hide');
+Template.hello.events({
 
-          $("#content").text(getRandomMessage());
+  'click #cookie' : function () {
+    $( "#cookie" ).effect( "shake" );
 
-          window.clearInterval(timer);
-      }, 500);
+    var timer = setInterval(function(){
+        $('#open-cookie').removeClass('hide');
+        $('#closed-cookie').addClass('hide');
+
+        $("#content").text(getRandomMessage());
+
+        window.clearInterval(timer);
+        
+        Quotes.insert( {foo: "bar"} );
+        console.log(Quotes.find().fetch());
+    }, 500);
 
 
-    }
-  });
-}
+  },
+  'click #new-quote-button' : function () {
+      Quotes.insert({quote: $('#new-quote-input').val()});
+      
+      console.log(Quotes.find());
+      var allQuotes = Quotes.find();
+      var count = 1;
+      var quoteString = "";
+      allQuotes.forEach(function (bla) {
+        quoteString += bla.quote + "<br />";
+        count += 1;
+      });
+      $('#quote-list').html( quoteString );
+  },
+
+  'click #find-quote-button' : function () {
+      var search = $('#find-quote-input').val();
+      var result = Quotes.findOne({quote: search});
+      if ( undefined !== result )
+        console.log( result );
+      else
+        alert("");
+  }
+});
