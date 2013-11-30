@@ -1,6 +1,6 @@
 var getRandomMessage = function()
 {
-   var wittyMessages=new Array("foo","bar","blub");
+   var wittyMessages=new Array("fooxxx","bar","blub");
    var i = Math.floor(Math.random()*wittyMessages.length);
    console.log(i);
    return wittyMessages[i];
@@ -22,12 +22,11 @@ if (Meteor.isClient) {
         $("#content").text(getRandomMessage());
       }  
     },
-    'click #b2' : function () {
-      alert("foo");
-
-    },
     'click #js-keks' : function () {
       $( "#js-keks" ).effect( "shake" );
+
+      $('.open-cookie').removeClass('hide');
+      $('.closed-cookie').removeClass('hide');
     }
   });
 }

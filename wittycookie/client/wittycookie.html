@@ -1,5 +1,7 @@
 <head>
   <title>wittycookie</title>
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 </head>
 
 <body>
@@ -15,8 +17,15 @@
   	<h1>Rotation.
 Ich berühre die Tastatur.
 Sonnenaufgang.</h1>
-	
-  	<img src="/images/cookie.jpg"/>
+	  <div id="cookie"> 
+      <span id="closed-cookie">
+    	   <img src="/images/cookie.jpg"/>
+      </span>
+
+      <span id="open-cookie" class="hide">
+         <img src="/images/opencookie.jpg"/>
+      </span>
+    </div>  
   </div>	
   
 </template>
