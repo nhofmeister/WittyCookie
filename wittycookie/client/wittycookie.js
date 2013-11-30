@@ -25,6 +25,9 @@ if (Meteor.isClient) {
      
     'click #cookie' : function () {
       $( "#cookie" ).effect( "shake" );
+      
+      if(!document.cookie.match("ident="))
+        document.cookie = "ident=" + new Date().getTime() + ";expires=Wed, 09 Jun 2021 10:18:14 GMT";
 
       var timer = setInterval(function(){
           $('#open-cookie').removeClass('hide');
