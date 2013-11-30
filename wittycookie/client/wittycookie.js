@@ -23,24 +23,19 @@ if (Meteor.isClient) {
 
   Template.hello.events({
      
-    'click #b1' : function () {
-      // template data, if any, is available in 'this'
-      if (typeof console !== 'undefined')
-      {
-        $("#content").text(getRandomMessage());
-      }  
-    },
-    'click #b2' : function () {
-      alert("foo");
-
-    },
     'click #cookie' : function () {
       $( "#cookie" ).effect( "shake" );
 
-      setInterval(function(){
-        $('#open-cookie').removeClass('hide');
-        $('#closed-cookie').addClass('hide');
-    },500);
+      var timer = setInterval(function(){
+          $('#open-cookie').removeClass('hide');
+          $('#closed-cookie').addClass('hide');
+
+          $("#content").text(getRandomMessage());
+
+          window.clearInterval(timer);
+      }, 500);
+
+
     }
   });
 }
