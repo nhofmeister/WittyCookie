@@ -1,4 +1,7 @@
 if (Meteor.isClient) {
+    
+  // var wittyMessages=new Array("foo","bar","blub");
+    
   Template.hello.greeting = function () {
     return "Welcome to wittycookie.";
   };
