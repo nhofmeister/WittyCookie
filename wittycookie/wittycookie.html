@@ -1,18 +1,10 @@
 <head>
   <title>wittycookie</title>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js"></script>
+  
 </head>
 
 <body>
   {{> hello}}
-
-  <div>
-      <label>Name:</label>
-      <input type="text" ng-model="yourName" placeholder="Enter a name here">
-      <hr>
-      <h1>Hello {{yourName}}!</h1>
-    </div>
 </body>
 
 <template name="hello">
@@ -21,4 +13,11 @@ Ich berühre die Tastatur.
 Sonnenaufgang.</h1>
   {{greeting}}
   <input type="button" value="Click" />
+</body>
+
+<template name="hello">
+  <h1>Hello World!</h1>
+  {{greeting}}
+  <input type="button" id="b1" value="Click" />
+  
 </template>
