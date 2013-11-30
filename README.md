@@ -1,0 +1,4 @@
+WittyCookie
+===========
+
+JS / Meteor learnings
