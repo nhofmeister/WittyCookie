@@ -27,6 +27,8 @@ Meteor.startup(function () {
           "tags" : [ "english","rambo"]}); 
           Lists.insert({ "proverb" : "Handle nur nach derjenigen Maxime, durch die du zugleich wollen kannst, dass sie ein allgemeines Gesetz werde.",
           "tags" : [ "english","wisdom"]}); 
+          Lists.insert({ "proverb" : "Wenn das Wörtchen wenn nicht wär, wär mein Vater Müllionär.",
+          "tags" : [ "german","wisdom"]}); 
 
       };
     
