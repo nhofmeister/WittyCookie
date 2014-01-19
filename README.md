@@ -6,7 +6,7 @@ JS / Meteor learnings
 Meteor
 -------
 
-We use meteor for this test app. For more info, check our the meteor site.
+We use meteor for this test app. For more info, check out the meteor site.
 
 https://www.meteor.com/
 
