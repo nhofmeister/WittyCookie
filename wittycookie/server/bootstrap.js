@@ -1,4 +1,5 @@
 Lists = new Meteor.Collection("lists");
+Users = new Meteor.Collection("users");
 
 // if the database is empty on server start, create some sample data.
 Meteor.startup(function () {
@@ -29,6 +30,7 @@ Meteor.startup(function () {
           "tags" : [ "english","wisdom"]}); 
           Lists.insert({ "proverb" : "Wenn das Wörtchen wenn nicht wär, wär mein Vater Müllionär.",
           "tags" : [ "german","wisdom"]}); 
+
 
       };
     
