@@ -1,41 +1,16 @@
-Lists = new Meteor.Collection("lists");
+Users = new Meteor.Collection("users");
 
-
-var getRandomMessage = function(usercookie)
-{
-  var arrayOfUserDocuments=Users.find({cookie:usercookie}).fetch();
-  var arrayOfAlreadySeenProverbs = new Array;
-
-  arrayOfUserDocuments.forEach(function(entry) {
-      arrayOfAlreadySeenProverbs.push(entry.proverb);
-  });
-
-   
-   var allQuotes = Lists.find({proverb: {$nin:arrayOfAlreadySeenProverbs}});
-
-   var quotesArray = allQuotes.fetch()
-   var i = Math.floor(Math.random()*quotesArray.length);
-   
-   console.log("getting proverb for user with cookie:"+usercookie);
-    if (quotesArray[i]) 
-      {
-        return quotesArray[i].proverb;
-      }
-    else 
-      {
-        return "The End!"
-      }
-};
 
 if (Meteor.isClient) {
     
-  Template.hello.greeting = function () {
-    return "Keks";
+  Template.userlist.users = function () {
+    return Users.find({}, {sort: {cookie: 1}});
+  
   };
 
  
 
-  Template.hello.events({
+  Template.userlist.events({
      
     'click #cookie' : function () {
       $( "#cookie" ).effect( "shake" );
