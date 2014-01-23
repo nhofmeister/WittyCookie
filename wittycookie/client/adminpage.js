@@ -24,9 +24,7 @@ Users = new Meteor.Collection("users");
 
 
   Template.cookie.proverblist = function () {
-    console.log("this="+this);
     var proverbs=Users.find({cookie:this.toString()}).fetch();
-    console.log(proverbs.length);
     return proverbs;
   };
 
