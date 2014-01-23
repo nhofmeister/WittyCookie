@@ -3,3 +3,33 @@
 .hide {
 	display: none;
 }
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    background: #eeeeee;
+    color: #333333;
+}
+
+#adminpane {
+    width: auto;
+    right: auto;
+    overflow: auto;
+    background: #eee;
+    border-right: 1px solid #999;
+    background: #ddd;
+    position: absolute;
+    left: 500px;
+    
+}
+
+#cookiepane {
+    width: 500px;
+    right: auto;
+    overflow: auto;
+    background: #eee;
+    border-right: 1px solid #999;
+    background: #ddd;
+    position: absolute;
+    
+}

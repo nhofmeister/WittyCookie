@@ -27,14 +27,8 @@ var getRandomMessage = function(usercookie)
       }
 };
 
-if (Meteor.isClient) {
     
-  Template.hello.greeting = function () {
-    return "Keks";
-  };
-
- 
-
+  
   Template.hello.events({
      
     'click #cookie' : function () {
@@ -65,4 +59,4 @@ if (Meteor.isClient) {
 
     }
   });
-}
+

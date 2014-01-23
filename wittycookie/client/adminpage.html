@@ -1,32 +1,33 @@
-<head>
-  <title>Adminpage</title>
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-</head>
 
-<body>
-Admin:
-  {{> userlist}}
-</body>
-
-
-  
 <template name="userlist">
-
-<div> List of users with proverbs: </div>
-
   <div class="userlist">
-    {{#each users}}
-      {{> user}}
+    
+    {{#each uniqueusers}}
+      {{> cookie}}
+    {{/each}}
+  
+  </div>
+</template>
+
+
+
+
+<template name="cookie">
+  <div class="cookie">
+    
+    <h3><span class="cookie">{{cookie}}</span></h3>
+    {{#each proverblist}}
+      {{>proverb}}
     {{/each}}
   </div>
 </template>
 
-<template name="user">
-  <div class="user">
-    <span class="cookie">{{cookie}}</span>
+  
+<template name="proverb">
+  <div class="proverb">
+    
     <span class="proverb">{{proverb}}</span>
   </div>
 </template>
-  
+
 
