@@ -1,0 +1,33 @@
+
+<template name="userlist">
+  <div class="userlist">
+    
+    {{#each uniqueusers}}
+      {{> cookie}}
+    {{/each}}
+  
+  </div>
+</template>
+
+
+
+
+<template name="cookie">
+  <div class="cookie">
+    
+    <h3><span class="cookie">{{cookie}}</span></h3>
+    {{#each proverblist}}
+      {{>proverb}}
+    {{/each}}
+  </div>
+</template>
+
+  
+<template name="proverb">
+  <div class="proverb">
+    
+    <span class="proverb">{{proverb}}</span>
+  </div>
+</template>
+
+

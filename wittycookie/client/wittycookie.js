@@ -1,5 +1,5 @@
 Lists = new Meteor.Collection("lists");
-Users = new Meteor.Collection("users");
+
 
 var getRandomMessage = function(usercookie)
 {
@@ -16,25 +16,19 @@ var getRandomMessage = function(usercookie)
    var quotesArray = allQuotes.fetch()
    var i = Math.floor(Math.random()*quotesArray.length);
    
-   console.log("getting proverb for user with cookie:"+usercookie);
+   //console.log("getting proverb for user with cookie:"+usercookie);
     if (quotesArray[i]) 
       {
         return quotesArray[i].proverb;
       }
     else 
       {
-        return "The End!"
+        return undefined;
       }
 };
 
-if (Meteor.isClient) {
     
-  Template.hello.greeting = function () {
-    return "Keks";
-  };
-
- 
-
+  
   Template.hello.events({
      
     'click #cookie' : function () {
@@ -55,9 +49,17 @@ if (Meteor.isClient) {
           $('#closed-cookie').addClass('hide');
           var message = getRandomMessage(document.cookie);
 
-          $("#content").text(message);
+          if (message) 
+            {
+              $("#content").text(message);
+              Users.insert({ "cookie" : document.cookie, "proverb": message});  
+            }
+            else
+            {
+              $("#content").text("The End is here!");
+            }
 
-          Users.insert({ "cookie" : document.cookie, "proverb": message});  
+          
 
           window.clearInterval(timer);
       }, 500);
@@ -65,4 +67,4 @@ if (Meteor.isClient) {
 
     }
   });
-}
+

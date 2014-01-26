@@ -5,11 +5,16 @@
 </head>
 
 <body>
-  {{> hello}}
+  <div id="cookiepane">
+    {{> hello}}
+  </div>
+  <div id="adminpane">
+    {{> userlist}}
+  </div>
 </body>
 
 <template name="hello">
-    <h1><div id="content"></div></h1>
+    <div id="content"></div>
   <div>
   
 	  <div id="cookie"> 

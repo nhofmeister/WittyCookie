@@ -1,5 +1,50 @@
 /* CSS declarations go here */
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+html, body {
+    height: 100%;
+}
 
 .hide {
 	display: none;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.5;
+    background: #eeeeee;
+    color: #333333;
+}
+
+#adminpane {
+    width: auto;
+    right: auto;
+    overflow: auto;
+    
+    border-right: 1px solid #999;
+    background: #ddd;
+    position: absolute;
+    left: 500px;
+    padding: 15px;
+    font-size: 12px;
+    
+}
+
+#cookiepane {
+    width: 500px;
+    right: auto;
+    overflow: auto;
+    
+    border-right: 1px solid #999;
+    background: white;
+    position: absolute;
+    padding: 15px;
+    
 }
