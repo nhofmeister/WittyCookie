@@ -16,6 +16,14 @@ html, body {
 	display: none;
 }
 
+
+.gorn {
+	border-right: 2px solid #888;
+	border-color: black;
+	background: #123456;
+}
+
+
 body {
     font-size: 16px;
     line-height: 1.5;

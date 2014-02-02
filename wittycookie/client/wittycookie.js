@@ -27,6 +27,14 @@ var getRandomMessage = function(usercookie)
       }
 };
 
+var setFeedback = function(usercookie,feedback)
+{
+  var arrayOfUserDocuments=Users.find({cookie:usercookie}).fetch();
+  var lastId=arrayOfUserDocuments[arrayOfUserDocuments.length-1]._id;
+
+  Users.update({_id:lastId},{$set:{feedback:feedback}});
+};
+
     
   
   Template.hello.events({
@@ -57,9 +65,7 @@ var getRandomMessage = function(usercookie)
             else
             {
               $("#content").text("The End is here!");
-            }
-
-          
+            }  
 
           window.clearInterval(timer);
       }, 500);
@@ -67,4 +73,35 @@ var getRandomMessage = function(usercookie)
 
     }
   });
+Template.hello.events({
+   'click #dislike' : function () {
 
+    $("#dislike").effect("shake");
+   
+      // only store feedback, if cookie is set 
+      if(document.cookie.match("ident=")) {
+        var timer = setInterval(function(){
+          
+          setFeedback(document.cookie,"doof");
+                   
+          window.clearInterval(timer);
+      }, 500);
+    };
+  }
+  });
+Template.hello.events({
+   'click #like' : function () {
+
+    $("#dislike").effect("shake");
+   
+      // only store feedback, if cookie is set 
+      if(document.cookie.match("ident=")) {
+        var timer = setInterval(function(){
+          
+          setFeedback(document.cookie,"super");
+          
+          window.clearInterval(timer);
+      }, 500);
+    };
+  }
+  });
